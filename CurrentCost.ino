@@ -28,16 +28,6 @@ void setFlagCheckConnection() {
 }
 
 void check_connection_task() {
-	//Ticker flasher_ticker;
-
-
-	//Serial.print("Free Memory: ");
-	//Serial.println(ESP.getFreeHeap());
-
-	//Serial.print("Free Flash: ");
-	//Serial.print(ESP.getFreeSketchSpace());
-	//Serial.print("of: ");
-	//Serial.println(ESP.getSketchSize());
 	Serial.print("Check connection... ");
 	if (WiFi_mode == STA_MODE) {
 		Serial.print("Station Mode... ");
