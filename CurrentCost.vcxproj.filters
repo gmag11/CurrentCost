@@ -79,6 +79,12 @@
     <None Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cont.S">
       <Filter>_core</Filter>
     </None>
+    <None Include="data\config.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\kwh.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.CurrentCost.vsarduino.h">
