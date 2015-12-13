@@ -44,22 +44,8 @@ void check_connection_task() {
 				notifyConn(PIN_CONN, false);
 				setSyncInterval(TIME_SYNC_PERIOD_HIGH);
 				Serial.println("Sync Period set high");
-				//WiFi.mode(WIFI_STA);
-				/*WiFi.begin(config.ssid.c_str(), config.pass.c_str());
-				int i = 0;
-				int prior_port_status = digitalRead(PIN_CONN);
-				flasher_ticker.attach(2, flasher);
-				while ((WiFi.status() != WL_CONNECTED) && (i < 10)) {
-					delay(1000);
-					Serial.print(i);
-					Serial.print(" ");
-					i++;
-				}
-				flasher_ticker.detach();
-				digitalWrite(PIN_CONN, prior_port_status);
-				Serial.println("");*/
 			} else if (WiFi.status() == WL_CONNECTED) {
-				//WiFi_connection_fails = 0;
+				WiFi_connection_fails = 0;
 				notifyConn(PIN_CONN, true);
 				Serial.print("Connected... ");
 				Serial.print(WiFi.status());
@@ -76,13 +62,6 @@ void check_connection_task() {
 	}
 	if (WiFi_mode == AP_MODE) {
 		Serial.println("AP Only Mode... Activated");
-		/*WiFi.mode(WIFI_AP);
-		WiFi.softAP(ssid_ap);
-		//WiFi.softAPConfig(IPAddress(192, 168, 1, 1), IPAddress(192, 168, 1, 1), IPAddress(255, 255, 255, 0));
-		Serial.print("IP address: ");
-		Serial.print(WiFi.softAPIP());
-		Serial.print(" Mask: ");
-		Serial.println(WiFi.subnetMask());*/
 	}
 
 }
