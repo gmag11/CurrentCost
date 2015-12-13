@@ -141,7 +141,7 @@ void do_sendTestMessage() {
 	flag_sendTestMessage = true;
 }
 
-void loop ( void ) {
+void loop () {
 	String mensaje;
 	sensor_t sensor_data;
 
@@ -193,7 +193,7 @@ void loop ( void ) {
 	}
 }
 
-void setup( void ) {
+void setup() {
 	// Prepare serial ports
 	Serial.println("Serial");
 	Serial.begin(115200); // Debug port
