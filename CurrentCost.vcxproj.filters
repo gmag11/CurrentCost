@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_core">
+      <UniqueIdentifier>{67a48ccf-9fe6-413a-82e6-3084791ab197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_core\libb64">
+      <UniqueIdentifier>{511c06be-4398-46de-bf4a-16e72733edf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_core\spiffs">
+      <UniqueIdentifier>{05f6a185-7cba-4517-91a2-3486e1507edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries">
+      <UniqueIdentifier>{a8013798-db8b-4be2-8451-6ec0c758f695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ArduinoJson">
+      <UniqueIdentifier>{9eba0a38-caea-4514-9631-b1c47d61e3a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ArduinoJson\src">
+      <UniqueIdentifier>{56198551-1698-427e-8d97-723369d5f245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ArduinoJson\src\Arduino">
+      <UniqueIdentifier>{748da9f8-d98e-48e2-a11a-513340c2ddb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ArduinoJson\src\Internals">
+      <UniqueIdentifier>{89d43a81-9c60-449e-9049-96238436777a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WebServer">
+      <UniqueIdentifier>{b1062514-fed5-437a-a270-d0f21ed1f87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WebServer\src">
+      <UniqueIdentifier>{b5a1d4cd-ab91-49cb-add8-b8f500e6d30e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WebServer\src\detail">
+      <UniqueIdentifier>{91e26010-f853-4537-b3fe-9c1b297cf6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WiFi">
+      <UniqueIdentifier>{5ba3c313-5050-4b46-a5fd-69164eabf600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WiFi\src">
+      <UniqueIdentifier>{3e7f4f30-ea26-45ed-b931-7c94e39bad96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WiFi\src\arch">
+      <UniqueIdentifier>{49eed865-4a4b-42e8-860a-156a9425469d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WiFi\src\include">
+      <UniqueIdentifier>{1fa3d9d9-d9fa-4671-9ed1-850dae887725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\ESP8266WiFi\src\lwip">
+      <UniqueIdentifier>{5f637459-1774-4538-a1ee-446cf8c75491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\espsoftwareserial-master">
+      <UniqueIdentifier>{5af4fdf7-189b-4e38-9478-864cb9b019ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Ticker">
+      <UniqueIdentifier>{5c1a7f46-af2e-46fe-9503-7a0c738e2482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\Time2">
+      <UniqueIdentifier>{79ed32cd-d8e3-43a7-9aef-8f9041c70ddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\TimeAlarms">
+      <UniqueIdentifier>{3beb0773-0fba-457b-8a78-da12872b36c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CurrentCost.ino" />
+    <None Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cont.S">
+      <Filter>_core</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.CurrentCost.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ntpClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page_Admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page_NetworkConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page_Script.js.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page_Style.css.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\base64.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\binary.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cbuf.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Client.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cont.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_features.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\debug.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\eboot_command.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Esp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\esp8266_peri.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\flash_utils.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\FS.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\FSImpl.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\HardwareSerial.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\i2s.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\interrupts.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\IPAddress.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\md5.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\MD5Builder.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\pgmspace.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Print.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Printable.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Server.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\sigma_delta.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\stdlib_noniso.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Stream.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\StreamString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\twi.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Udp.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Updater.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\user_config.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\WCharacter.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\wiring_private.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\WString.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\libb64\cdecode.h">
+      <Filter>_core\libb64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\libb64\cencode.h">
+      <Filter>_core\libb64</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs.h">
+      <Filter>_core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_config.h">
+      <Filter>_core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_nucleus.h">
+      <Filter>_core\spiffs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\variants\generic\pins_arduino.h">
+      <Filter>_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\ArduinoJson\src\ArduinoJson.h">
+      <Filter>_libraries\ArduinoJson\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WebServer\src\ESP8266WebServer.h">
+      <Filter>_libraries\ESP8266WebServer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WebServer\src\detail\RequestHandler.h">
+      <Filter>_libraries\ESP8266WebServer\src\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WebServer\src\detail\RequestHandlersImpl.h">
+      <Filter>_libraries\ESP8266WebServer\src\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\ESP8266WiFi.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiClient.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiClientSecure.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiServer.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiUdp.h">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\arch\cc.h">
+      <Filter>_libraries\ESP8266WiFi\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\arch\perf.h">
+      <Filter>_libraries\ESP8266WiFi\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\arch\sys_arch.h">
+      <Filter>_libraries\ESP8266WiFi\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\ClientContext.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\lwipopts.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\slist.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\ssl.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\UdpContext.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\include\wl_definitions.h">
+      <Filter>_libraries\ESP8266WiFi\src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\api.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\api_msg.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\arch.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\autoip.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\debug.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\def.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\dhcp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\dns.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\err.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\icmp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\igmp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\inet.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\inet_chksum.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\init.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\ip.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\ip_addr.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\ip_frag.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\mem.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\memp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\memp_std.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\mem_manager.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\netbuf.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\netdb.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\netif.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\netifapi.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\opt.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\pbuf.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\raw.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\sio.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\snmp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\snmp_asn1.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\snmp_msg.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\snmp_structs.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\sockets.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\stats.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\sys.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\tcp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\tcpip.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\tcp_impl.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\timers.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\lwip\udp.h">
+      <Filter>_libraries\ESP8266WiFi\src\lwip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\espsoftwareserial-master\SoftwareSerial.h">
+      <Filter>_libraries\espsoftwareserial-master</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\Ticker\Ticker.h">
+      <Filter>_libraries\Ticker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Time2\Time2.h">
+      <Filter>_libraries\Time2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\TimeAlarms\TimeAlarms.h">
+      <Filter>_libraries\TimeAlarms</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ntpClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\abi.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\base64.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cont_util.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_eboot_command.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_flash_utils.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_i2s.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_main.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_noniso.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_phy.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_postmortem.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_si2c.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_timer.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring_analog.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring_digital.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring_pulse.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring_pwm.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\core_esp8266_wiring_shift.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\debug.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Esp.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\FS.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\HardwareSerial.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\IPAddress.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\libc_replacements.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\MD5Builder.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\pgmspace.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Print.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs_api.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs_hal.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Stream.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\StreamString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\time.c">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Tone.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Updater.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\WMath.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\WString.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\libb64\cdecode.c">
+      <Filter>_core\libb64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\libb64\cencode.c">
+      <Filter>_core\libb64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_cache.c">
+      <Filter>_core\spiffs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_check.c">
+      <Filter>_core\spiffs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_gc.c">
+      <Filter>_core\spiffs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_hydrogen.c">
+      <Filter>_core\spiffs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\spiffs\spiffs_nucleus.c">
+      <Filter>_core\spiffs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\JsonArray.cpp">
+      <Filter>_libraries\ArduinoJson\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\JsonBuffer.cpp">
+      <Filter>_libraries\ArduinoJson\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\JsonObject.cpp">
+      <Filter>_libraries\ArduinoJson\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\JsonVariant.cpp">
+      <Filter>_libraries\ArduinoJson\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Arduino\Print.cpp">
+      <Filter>_libraries\ArduinoJson\src\Arduino</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\Comments.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\Encoding.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\IndentedPrint.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\JsonParser.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\List.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\Prettyfier.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\ArduinoJson\src\Internals\StaticStringBuilder.cpp">
+      <Filter>_libraries\ArduinoJson\src\Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WebServer\src\ESP8266WebServer.cpp">
+      <Filter>_libraries\ESP8266WebServer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WebServer\src\Parsing.cpp">
+      <Filter>_libraries\ESP8266WebServer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\ESP8266WiFi.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiClient.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiClientSecure.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiServer.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\ESP8266WiFi\src\WiFiUdp.cpp">
+      <Filter>_libraries\ESP8266WiFi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\espsoftwareserial-master\SoftwareSerial.cpp">
+      <Filter>_libraries\espsoftwareserial-master</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\libraries\Ticker\Ticker.cpp">
+      <Filter>_libraries\Ticker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Time2\DateStrings.cpp">
+      <Filter>_libraries\Time2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Time2\Time2.cpp">
+      <Filter>_libraries\Time2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\TimeAlarms\TimeAlarms.cpp">
+      <Filter>_libraries\TimeAlarms</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
