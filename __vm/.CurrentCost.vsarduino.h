@@ -105,7 +105,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\CurrentCost\Page_Script.js.h>
 #include <..\CurrentCost\Page_Style.css.h>
 #include <..\CurrentCost\global.h>
+#include <..\CurrentCost\helpers.cpp>
 #include <..\CurrentCost\helpers.h>
-#include <..\CurrentCost\ntpClient.cpp>
-#include <..\CurrentCost\ntpClient.h>
 #endif

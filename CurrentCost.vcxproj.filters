@@ -73,6 +73,12 @@
     <Filter Include="_libraries\TimeAlarms">
       <UniqueIdentifier>{3beb0773-0fba-457b-8a78-da12872b36c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="_libraries\NTPClient">
+      <UniqueIdentifier>{f20b5c15-9b8f-4ad7-9fab-7440ddb72146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_libraries\NTPClient\src">
+      <UniqueIdentifier>{6a9ed7af-f050-48c0-a6aa-d45966c9bacf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="CurrentCost.ino" />
@@ -97,9 +103,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="helpers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ntpClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Page_Admin.h">
@@ -429,11 +432,14 @@
     <ClInclude Include="..\libraries\TimeAlarms\TimeAlarms.h">
       <Filter>_libraries\TimeAlarms</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\Martin_G\Documents\Arduino\libraries\NTPClient\src\NtpClientLib.h">
+      <Filter>_libraries\NTPClient\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_micro-api\libraries\CCostLib\src\CCostLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ntpClient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\abi.cpp">
       <Filter>_core</Filter>
     </ClCompile>
@@ -637,6 +643,15 @@
     </ClCompile>
     <ClCompile Include="..\libraries\TimeAlarms\TimeAlarms.cpp">
       <Filter>_libraries\TimeAlarms</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Martin_G\Documents\Arduino\libraries\NTPClient\src\NtpClientLib.cpp">
+      <Filter>_libraries\NTPClient\src</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\_micro-api\libraries\CCostLib\src\CCostLib.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

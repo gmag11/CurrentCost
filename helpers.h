@@ -1,9 +1,17 @@
-void flasher() {
-	if (digitalRead(PIN_CONN) == 0)
-		digitalWrite(PIN_CONN, HIGH);
-	else
-		digitalWrite(PIN_CONN, LOW);
-}
+#ifndef helpers_h
+#define helpers_h
+
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "arduino.h"
+#else
+#include "WProgram.h"
+#endif
+
+#include <ESP8266WiFi.h>
+#include "FS.h"
+#include "global.h"
+
+void flasher();
 
 void notifyConn(uint8_t pin, boolean connected) {
 	if (connected) {
@@ -128,7 +136,7 @@ String urldecode(String input) // (based on https://code.google.com/p/avr-netino
 	char c;
 	String ret = "";
 
-	for (byte t = 0; t<input.length(); t++)
+	for (byte t = 0; t < input.length(); t++)
 	{
 		c = input[t];
 		if (c == '+') c = ' ';
@@ -176,7 +184,6 @@ String digitalClockString() {
 	return timeStr;
 }
 
-time_t getNtpTime() {
-	return ntp.getNtpTime();
-}
 
+
+#endif // !helpers_h

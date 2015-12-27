@@ -1,3 +1,5 @@
+#include "CCostLib.h"
+#include <NtpClientLib.h>
 #define TEST
 #define DEBUG
 //#define WEB_TIME
@@ -13,10 +15,10 @@
 #include <TimeAlarms.h>
 #include <SoftwareSerial.h>
 #include "FS.h"
-#include "ntpClient.h"
-#include "global.h"
+#include <NtpClientLib.h>
 #include "helpers.h"
 #include "CCost.h"
+#include "global.h"
 
 #include "Page_Admin.h"
 #include "Page_Script.js.h"
@@ -74,8 +76,7 @@ void checkTimeReset() {
 #ifdef DEBUG
 	Serial.println("Check time reset");
 #endif
-
-	for (int i; i < MAX_SENSORS; i++) {
+	for (int i = 0; i < MAX_SENSORS; i++) {
 		Serial.print("Sensor ");
 		Serial.print(i);
 		Serial.print(". kWh today: ");
@@ -131,12 +132,13 @@ void loop () {
 	}
 #endif
 	
+	//------------------- Save kWh data -----------------------
 	if (flag_kwh) { //Save kWh data
 		if (!save_kwh()) {
 			Serial.println("Error saving kwh");
 		}
 	}
-
+	//------------------- Chech measures age-------------------
 	if (flag_checkValidMeasure) { //Check for every measure age
 		for (int i = 0; i < MAX_SENSORS; i++) {
 			if (sensor[i].diff > MEAS_VALIDITY) {
@@ -150,12 +152,14 @@ void loop () {
 		}
 		flag_checkValidMeasure = false;
 	}
-
+	
+	//------------------- Reset historic values---------------
 	if (flag_checkTime) { //Check if historic values need reset
 		flag_checkTime = false;
 		checkTimeReset();
 	}
 
+	//------------------- Check connection -------------------
 	if (flag_checkConnection) { //Connection check to turn LED on or off
 		flag_checkConnection = false;
 		check_connection_task();
@@ -219,10 +223,14 @@ void setup() {
 	WiFi.begin(config.ssid.c_str(), config.pass.c_str());
 
 	check_connection_task(); // Wait for WiFi and set ntp time
-
-	setSyncProvider(getNtpTime); // Set time sync function to be triggered every...
-								 //setSyncInterval(NTP_SYNC_PERIOD);
-								 //save_config();
+	
+	ntp = ntpClient::getInstance(config.ntpServerName, config.timeZone);
+	if (ntp->begin()) {
+		Serial.println("NTP Client set");
+	} else {
+		Serial.println("Error creating NTP Client");
+	}
+	//save_config();
 	t_kwh.attach(KWH_FREQ, do_save_kwh); // Program measure saving task
 	t_checkValidMeasure.attach(CHECKVALIDMEASURE_FREQ, invalidate_measure_task); // Program measure vaidity check task
 	Alarm.alarmRepeat(0, 0, 0, doCheckTimeReset); // Program reset time task

@@ -1,3 +1,13 @@
+#ifndef global_h
+#define global_h
+
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+#include <SoftwareSerial.h>
+#include <ArduinoJson.h>
+#include <NtpClientLib.h>
+#include <Ticker.h>
+
 #define MAX_SENSORS 2		//Max number of channels of Current Cost sensor
 #define MEAS_VALIDITY 30000	// Sensor measure validity time. Used to ignore a measure if I fail to get messages from sensor.
 
@@ -75,8 +85,8 @@ boolean flag_checkConnection = false; // Flag to trigger WiFi connection checkin
 
 
 enum conn_mode {
-STA_MODE,
-AP_MODE
+	STA_MODE,
+	AP_MODE
 };
 
 conn_mode WiFi_mode = STA_MODE; // Mode of WiFi, normally it is Station Mode. AP mode is selected if WiFi connection dails several times
@@ -89,7 +99,7 @@ uint8_t WiFi_connection_fails = 0; // Number of WiFi connection failures
 
 char ssid_ap[] = "ESP_WiFi";
 
-ntpClient ntp("0.europe.pool.ntp.org");
+ntpClient *ntp;
 
 void setDefaultConfig() {
 	config.ssid = "SSID";
@@ -99,3 +109,5 @@ void setDefaultConfig() {
 	config.daylight = true;
 	config.deviceName = "WebConfig";
 }
+
+#endif // !global_h

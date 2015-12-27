@@ -1,3 +1,5 @@
+#ifndef CCost_h
+#define CCost_h
 # define BUFFER_LENGTH 625
 
 
@@ -170,3 +172,4 @@ boolean load_kwh() {
 	return true;
 }
 
+#endif // !CCost_h
