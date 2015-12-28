@@ -99,7 +99,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portInputRegister(P)
 #define portModeRegister(P)
 #include <..\CurrentCost\CurrentCost.ino>
-#include <..\CurrentCost\CCost.h>
+#include <src\_micro-api\libraries\CCostLib\src\CCostLib.cpp>
+#include <src\_micro-api\libraries\CCostLib\src\CCostLib.h>
 #include <..\CurrentCost\Page_Admin.h>
 #include <..\CurrentCost\Page_NetworkConfiguration.h>
 #include <..\CurrentCost\Page_Script.js.h>

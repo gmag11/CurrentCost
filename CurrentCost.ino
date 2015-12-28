@@ -1,6 +1,5 @@
 #include "CCostLib.h"
 #include <NtpClientLib.h>
-#define TEST
 #define DEBUG
 //#define WEB_TIME
 #define NTP_TIME
