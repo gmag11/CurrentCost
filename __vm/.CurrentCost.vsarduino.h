@@ -105,6 +105,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\CurrentCost\Page_NetworkConfiguration.h>
 #include <..\CurrentCost\Page_Script.js.h>
 #include <..\CurrentCost\Page_Style.css.h>
+#include <..\CurrentCost\global.cpp>
 #include <..\CurrentCost\global.h>
 #include <..\CurrentCost\helpers.cpp>
 #include <..\CurrentCost\helpers.h>

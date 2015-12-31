@@ -1,5 +1,3 @@
-#include "CCostLib.h"
-#include <NtpClientLib.h>
 #define DEBUG
 //#define WEB_TIME
 #define NTP_TIME
@@ -15,9 +13,10 @@
 #include <SoftwareSerial.h>
 #include "FS.h"
 #include <NtpClientLib.h>
-#include "helpers.h"
-#include "CCost.h"
 #include "global.h"
+#include "helpers.h"
+#include "CCostLib.h"
+
 
 #include "Page_Admin.h"
 #include "Page_Script.js.h"
@@ -25,10 +24,10 @@
 #include "Page_NetworkConfiguration.h"
 
 void setFlagCheckConnection() {
-	flag_checkConnection = true;
+	checkConnection_flag = true;
 }
 
-void check_connection_task() {
+void checkConnection_task() {
 	Serial.print("Check connection... ");
 	if (WiFi_mode == STA_MODE) {
 		Serial.print("Station Mode... ");
@@ -43,8 +42,8 @@ void check_connection_task() {
 			if (WiFi.status() != WL_CONNECTED) {
 				Serial.println("not connected");
 				notifyConn(PIN_CONN, false);
-				setSyncInterval(TIME_SYNC_PERIOD_HIGH);
-				Serial.println("Sync Period set high");
+				//setSyncInterval(TIME_SYNC_PERIOD_HIGH);
+				//Serial.println("Sync Period set high");
 			} else if (WiFi.status() == WL_CONNECTED) {
 				WiFi_connection_fails = 0;
 				notifyConn(PIN_CONN, true);
@@ -67,70 +66,26 @@ void check_connection_task() {
 
 }
 
-void doCheckTimeReset() {
-	flag_checkTime = true;
-}
-
-void checkTimeReset() {
-#ifdef DEBUG
-	Serial.println("Check time reset");
-#endif
-	for (int i = 0; i < MAX_SENSORS; i++) {
-		Serial.print("Sensor ");
-		Serial.print(i);
-		Serial.print(". kWh today: ");
-		Serial.print(sensor[i].kwh_day);
-		//Serial.print(" ");
-		sensor[i].kwh_day = 0;
-		if (day() == 1) { //1st day of month
-			Serial.print(". kWh this month: ");
-			Serial.print(sensor[i].kwh_month);
-			//Serial.print(" ");
-			sensor[i].kwh_month = 0;
-			if (month() == 1) {//January
-				Serial.print(". kWh this year: ");
-				Serial.print(sensor[i].kwh_year);
-				//Serial.print(" ");
-				sensor[i].kwh_year = 0;
-			}
-		}
-	}
-
-}
-
-void invalidate_measure_task() {
-	flag_checkValidMeasure = true;
-}
-
-void do_save_kwh() {
-	flag_kwh = true;
-}
-
-void do_sendTestMessage() {
-	flag_sendTestMessage = true;
-}
-
 void loop () {
 	String mensaje;
-	sensor_t sensor_data;
-
+	
 	server.handleClient();
 
 #ifdef TEST // Test mode to generate random data and avoid the need to hace CCost base connected for developing
-	if (flag_sendTestMessage/*int i = swSer.available()*/) {
+	/*if (flag_sendTestMessage //int i = swSer.available()/ /) {
 		mensaje = "";//swSer.readStringUntil('\n');
 		flag_sendTestMessage = false;
 		process_ccost_xml_test(mensaje);
 		show_sensor_data();
-	}
+	}*/
 #else // Normal mode code, reading from serial
 	if (swSer.available()) {
 		swSer.readStringUntil('\n');
-		process_ccost_xml(mensaje);
-		show_sensor_data();
+		ccost->process_ccost_xml(mensaje);
+		Serial.println(ccost->show_sensor_data());
 	}
 #endif
-	
+	/*
 	//------------------- Save kWh data -----------------------
 	if (flag_kwh) { //Save kWh data
 		if (!save_kwh()) {
@@ -156,12 +111,12 @@ void loop () {
 	if (flag_checkTime) { //Check if historic values need reset
 		flag_checkTime = false;
 		checkTimeReset();
-	}
+	}*/
 
 	//------------------- Check connection -------------------
-	if (flag_checkConnection) { //Connection check to turn LED on or off
-		flag_checkConnection = false;
-		check_connection_task();
+	if (checkConnection_flag) { //Connection check to turn LED on or off
+		checkConnection_flag = false;
+		checkConnection_task();
 	}
 }
 
@@ -221,7 +176,7 @@ void setup() {
 
 	WiFi.begin(config.ssid.c_str(), config.pass.c_str());
 
-	check_connection_task(); // Wait for WiFi and set ntp time
+	checkConnection_task(); // Wait for WiFi and set ntp time
 	
 	ntp = ntpClient::getInstance(config.ntpServerName, config.timeZone);
 	if (ntp->begin()) {
@@ -229,13 +184,14 @@ void setup() {
 	} else {
 		Serial.println("Error creating NTP Client");
 	}
+	ccost = CurrentCost::getInstance();
 	//save_config();
-	t_kwh.attach(KWH_FREQ, do_save_kwh); // Program measure saving task
-	t_checkValidMeasure.attach(CHECKVALIDMEASURE_FREQ, invalidate_measure_task); // Program measure vaidity check task
-	Alarm.alarmRepeat(0, 0, 0, doCheckTimeReset); // Program reset time task
-	t_checkConnection.attach(CHECKCONNECTION_FREQ, setFlagCheckConnection); // Program connection check task
+	//t_kwh.attach(KWH_FREQ, do_save_kwh); // Program measure saving task
+	//t_checkValidMeasure.attach(CHECKVALIDMEASURE_FREQ, invalidate_measure_task); // Program measure vaidity check task
+	//Alarm.alarmRepeat(0, 0, 0, doCheckTimeReset); // Program reset time task
+	checkConnection_ticker.attach(CHECKCONNECTION_FREQ, setFlagCheckConnection); // Program connection check task
 
-#ifdef TEST
+/*#ifdef TEST
 	t_sendTestMessage.attach(6, do_sendTestMessage);
 #endif
 
@@ -249,7 +205,7 @@ void setup() {
 		sensor[i].kwh_month = 0;
 		sensor[i].kwh_year = 0;
 	}
-	load_kwh(); // Load measurement data from flash
+	load_kwh(); // Load measurement data from flash*/
 #ifdef DEBUG
 	Serial.println("\nCC Parser test started");
 #endif

@@ -14,18 +14,7 @@
 #define PIN_CONN 0 // Pin where LED is connected
 #define CONFIG_FILE_NAME "/config.json"
 
-boolean config_save_flag = false; // Flag to trigger config saving
-
-typedef struct {
-	String ssid;	// Network SSID (name) buffer
-	String pass;	// Network password buffer
-	String ntpServerName;	//NTP Server name
-	int timeZone;
-	boolean daylight;
-	String deviceName;
-} strConfig;
-
-strConfig config;
+extern boolean config_save_flag; // Flag to trigger config saving
 
 void flasher();
 void notifyConn(uint8_t pin, boolean connected);

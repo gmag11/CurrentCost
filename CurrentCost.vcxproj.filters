@@ -650,5 +650,8 @@
     <ClCompile Include="src\_micro-api\libraries\CCostLib\src\CCostLib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,7 @@
 #include "helpers.h"
 
+boolean config_save_flag = false;
+
 void flasher() {
 	if (digitalRead(PIN_CONN) == 0)
 		digitalWrite(PIN_CONN, HIGH);

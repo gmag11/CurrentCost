@@ -7,24 +7,22 @@
 #include <ArduinoJson.h>
 #include <NtpClientLib.h>
 #include <Ticker.h>
+#include "CCostLib.h"
 
-ESP8266WebServer server(80);	// The Webserver
+extern ESP8266WebServer server;	// The Webserver
 
-/*#ifndef TIME_SYNC_PERIOD
+
 #define TIME_SYNC_PERIOD	86400 // How often (seconds) ntp time is checked for sync if time has been set. 86400 = 1 day
 #define TIME_SYNC_PERIOD_HIGH 30	// How often (seconds) ntp time is checked for sync if no time has been set. 30 sec.
-#endif*/
 
-SoftwareSerial swSer(2, -1, 256); // Serial port connected to Current Cost base station. Only Rx is connected.
+extern SoftwareSerial swSer; // Serial port connected to Current Cost base station. Only Rx is connected.
 
-
-
-boolean AdminEnabled = true;		// Enable Admin Mode for a given Time
+extern boolean AdminEnabled;		// Enable Admin Mode for a given Time
 #define ADMIN_TIMEOUT 3600  // Defines the Time in Seconds, when the Admin-Mode will be diabled
-int AdminTimeOutCounter = 0;// Counter for Disabling the AdminMode
+extern int AdminTimeOutCounter;// Counter for Disabling the AdminMode
 
-Ticker t_checkConnection; // Ticker to trigger WiFi connection checking
-boolean flag_checkConnection = false; // Flag to trigger WiFi connection checking
+extern Ticker checkConnection_ticker; // Ticker to trigger WiFi connection checking
+extern boolean checkConnection_flag; // Flag to trigger WiFi connection checking
 #define CHECKCONNECTION_FREQ 25 // WiFi connection checking period
 
 typedef enum {
@@ -32,21 +30,26 @@ typedef enum {
 	AP_MODE
 } conn_mode;
 
-conn_mode WiFi_mode = STA_MODE; // Mode of WiFi, normally it is Station Mode. AP mode is selected if WiFi connection dails several times
-uint8_t WiFi_connection_fails = 0; // Number of WiFi connection failures
+extern conn_mode WiFi_mode; // Mode of WiFi, normally it is Station Mode. AP mode is selected if WiFi connection dails several times
+extern uint8_t WiFi_connection_fails; // Number of WiFi connection failures
 #define MAX_WIFI_CONN_FAILS 5 // Number of connection failures before changing to AP Mode
 
-char ssid_ap[] = "ESP_WiFi";
+extern char ssid_ap[];
 
-ntpClient *ntp;
+extern ntpClient *ntp;
+extern CurrentCost *ccost;
 
-void setDefaultConfig() {
-	config.ssid = "SSID";
-	config.pass = "PASS";
-	config.ntpServerName = "0.europe.pool.ntp.org";
-	config.timeZone = 1;
-	config.daylight = true;
-	config.deviceName = "WebConfig";
-}
+typedef struct {
+	String ssid;	// Network SSID (name) buffer
+	String pass;	// Network password buffer
+	String ntpServerName;	//NTP Server name
+	int timeZone;
+	boolean daylight;
+	String deviceName;
+} strConfig;
+
+extern strConfig config;
+
+void setDefaultConfig();
 
 #endif // !global_h

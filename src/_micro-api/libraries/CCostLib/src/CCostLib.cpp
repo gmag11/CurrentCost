@@ -6,8 +6,12 @@
 
 # define BUFFER_LENGTH 625
 
+bool CurrentCost::instanceFlag = false;
+CurrentCost *CurrentCost::s_ccost = NULL;
 
-CurrentCost * CurrentCost::getInstance() {
+extern CurrentCost currentcost;
+
+CurrentCost *CurrentCost::getInstance() {
 	if (!instanceFlag) {
 		s_ccost = new CurrentCost();
 		//atexit(&DestroyNtpClient);
@@ -16,6 +20,7 @@ CurrentCost * CurrentCost::getInstance() {
 	}
 	else {
 		return s_ccost;
+	}
 }
 
 #ifdef TEST
@@ -40,6 +45,13 @@ void CurrentCost::process_ccost_xml_test(String msg) {
 	sensor[sensor_id].valid = true;
 	last_read_sensor = sensor_id;
 
+}
+
+void CurrentCost::sendTestMessage() {
+	CurrentCost *c_cost = s_ccost;
+
+	c_cost->process_ccost_xml_test("");
+	Serial.println(c_cost->show_sensor_data());
 }
 #endif //TEST
 
@@ -88,44 +100,73 @@ String CurrentCost::show_sensor_data() {
 		temp += sensor[last_read_sensor].watts;
 		temp += " W. Temperature: ";
 		temp += sensor[last_read_sensor].tempr;
-		
-		return temp;
 	}
+	return temp;
 }
 
-boolean CurrentCost::save_kwh() {
-	kwh_flag = false;
+String CurrentCost::digitalClockString() {
+	// digital clock display of the time
+	String str;
+	str = String(hour());
+	str += fillDigits(minute());
+	str += fillDigits(second());
+	str += " ";
+	str += String(day());
+	str += ".";
+	str += String(month());
+	str += ".";
+	str += String (year());
+	
+	return str;
+}
+
+String CurrentCost::fillDigits(int digits) {
+	// utility for digital clock display: prints preceding colon and leading 0
+	String str;
+
+	str = ":";
+	if (digits < 10)
+		str += '0';
+	str += String(digits);
+
+	return str;
+}
+
+void CurrentCost::save_kwh() {
 #ifdef DEBUG
 	Serial.println("Save kwh");
 #endif
+
+	CurrentCost *c_cost = s_ccost;
+
 	StaticJsonBuffer<BUFFER_LENGTH> jsonBuffer;
 	JsonObject& json = jsonBuffer.createObject();
 	json["sensors"] = MAX_SENSORS;
 
 	JsonArray& data1 = json.createNestedArray("kwh");
 	for (int i = 0; i < MAX_SENSORS; i++)
-		data1.add(double_with_n_digits(sensor[i].kwh, 8));
+		data1.add(double_with_n_digits(c_cost->sensor[i].kwh, 8));
 
 	JsonArray& data1a = json.createNestedArray("kwh_hour");
 	for (int i = 0; i < MAX_SENSORS; i++)
-		data1a.add(double_with_n_digits(sensor[i].kwh_hour, 8));
+		data1a.add(double_with_n_digits(c_cost->sensor[i].kwh_hour, 8));
 
 	JsonArray& data2 = json.createNestedArray("kwh_day");
 	for (int i = 0; i < MAX_SENSORS; i++)
-		data2.add(double_with_n_digits(sensor[i].kwh_day, 8));
+		data2.add(double_with_n_digits(c_cost->sensor[i].kwh_day, 8));
 
 	JsonArray& data3 = json.createNestedArray("kwh_month");
 	for (int i = 0; i < MAX_SENSORS; i++)
-		data3.add(double_with_n_digits(sensor[i].kwh_month, 8));
+		data3.add(double_with_n_digits(c_cost->sensor[i].kwh_month, 8));
 
 	JsonArray& data4 = json.createNestedArray("kwh_year");
 	for (int i = 0; i < MAX_SENSORS; i++)
-		data4.add(double_with_n_digits(sensor[i].kwh_year, 8));
+		data4.add(double_with_n_digits(c_cost->sensor[i].kwh_year, 8));
 
 	File configFile = SPIFFS.open(KWH_FILE_NAME, "w");
 	if (!configFile) {
 		Serial.println("Failed to open config file for writing");
-		return false;
+		//return false;
 	}
 
 #ifdef DEBUG
@@ -135,7 +176,7 @@ boolean CurrentCost::save_kwh() {
 #endif
 
 	json.printTo(configFile);
-	return true;
+	//return true;
 }
 
 boolean CurrentCost::load_kwh() {
@@ -194,6 +235,78 @@ boolean CurrentCost::load_kwh() {
 	return true;
 }
 
-CurrentCost::CurrentCost()
-{
+void CurrentCost::checkValidMeasure_task() {
+	CurrentCost *c_cost = s_ccost;
+
+	for (int i = 0; i < MAX_SENSORS; i++) {
+		if (c_cost->sensor[i].diff > MEAS_VALIDITY) {
+			c_cost->sensor[i].valid = false;
+#ifdef DEBUG
+			Serial.print(c_cost->sensor[i].diff);
+			Serial.print(" sec. ");
+			Serial.print("Invalidate measure ");
+			Serial.println(i);
+#endif // DEBUG
+
+		}
+	}
+}
+
+void CurrentCost::checkTimeReset() {
+#ifdef DEBUG
+	Serial.println("Check time reset");
+#endif //DEBUG
+	CurrentCost *c_cost = s_ccost;
+
+	for (int i = 0; i < MAX_SENSORS; i++) {
+#ifdef DEBUG
+		Serial.print("Sensor ");
+		Serial.print(i);
+		Serial.print(". kWh today: ");
+		Serial.print(c_cost->sensor[i].kwh_day);
+		//Serial.print(" ");  
+#endif // DEBUG
+		c_cost->sensor[i].kwh_day = 0; // Time is 00:00:00. Time to reset sum
+		if (day() == 1) { //1st day of month
+#ifdef DEBUG
+			Serial.print(". kWh this month: ");
+			Serial.print(c_cost->sensor[i].kwh_month);
+			//Serial.print(" ");  
+#endif // DEBUG
+			c_cost->sensor[i].kwh_month = 0;
+			if (month() == 1) {//January
+#ifdef DEBUG
+				Serial.print(". kWh this year: ");
+				Serial.print(c_cost->sensor[i].kwh_year);
+				//Serial.print(" ");
+#endif //DEBUG
+				c_cost->sensor[i].kwh_year = 0;
+			}
+		}
+	}
+
+}
+
+
+CurrentCost::CurrentCost() {
+	s_ccost = this;
+	CurrentCost *c_cost = s_ccost;
+
+	kwh_ticker.attach(KWH_FREQ, save_kwh); // Program measure saving task
+	checkValidMeasure_ticker.attach(CHECKVALIDMEASURE_FREQ, c_cost->checkValidMeasure_task); // Program measure vaidity check task
+	Alarm.alarmRepeat(0, 0, 0, c_cost->checkTimeReset); // Program reset time task
+#ifdef TEST
+	sendTestMessage_ticker.attach(6, c_cost->sendTestMessage);
+#endif
+	// Initialize sensor data
+	for (int i = 0; i < MAX_SENSORS; i++) {
+		sensor[i].time_sensor = millis();
+		sensor[i].last_time_sensor = millis();
+		sensor[i].kwh = 0;
+		sensor[i].kwh_hour = 0;
+		sensor[i].kwh_day = 0;
+		sensor[i].kwh_month = 0;
+		sensor[i].kwh_year = 0;
+	}
+	load_kwh(); // Load measurement data from 
 }
