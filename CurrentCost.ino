@@ -1,6 +1,5 @@
-#define DEBUG
-//#define WEB_TIME
-#define NTP_TIME
+#define DEBUG 0
+#define TEST
 
 #include <WiFiServer.h>
 #include <WiFiClient.h>
@@ -122,13 +121,17 @@ void loop () {
 
 void setup() {
 	// Prepare serial ports
-	Serial.println("Serial");
 	Serial.begin(115200); // Debug port
+#ifndef TEST
 	swSer.begin(57600); // CCost base port
-	
+#endif // TEST
+
 	pinMode(PIN_CONN, OUTPUT); // Configure LED pin
 	notifyConn(PIN_CONN, false); // Set LED off
+#ifdef DEBUG
 	Serial.println("test");
+
+#endif // DEBUG
 
 	// Start flash file system
 	if (!SPIFFS.begin()) {
@@ -147,7 +150,7 @@ void setup() {
 	else {
 		Serial.println("FS started");
 	}
-#endif
+#endif //DEBUG
 	// load configuration file from flash
 	if (!load_config()) {
 		//WiFi_mode = STA_MODE;
@@ -156,7 +159,11 @@ void setup() {
 		if (!save_config())
 			Serial.println("Error creating config file");
 
+#ifdef DEBUG
 	}
+	else
+		Serial.println("Config loaded.");
+#endif // DEBUG
 	if (AdminEnabled) {
 		WiFi.mode(WIFI_AP_STA);
 		WiFi.softAP(ssid_ap);
@@ -206,9 +213,7 @@ void setup() {
 		sensor[i].kwh_year = 0;
 	}
 	load_kwh(); // Load measurement data from flash*/
-#ifdef DEBUG
-	Serial.println("\nCC Parser test started");
-#endif
+
 	// WebServer init
 	server.on("/favicon.ico", []() { Serial.println("favicon.ico"); server.send(200, "text/html", "");   });
 	server.on("/admin.html", []() { Serial.println("admin.html"); server.send(200, "text/html", Page_AdminMainPage);   });

@@ -1,12 +1,15 @@
 #include "helpers.h"
+#include "Arduino.h"
+//#include "memory"
+//#include <bits/unique_ptr.h>
 
 boolean config_save_flag = false;
 
-void flasher() {
-	if (digitalRead(PIN_CONN) == 0)
-		digitalWrite(PIN_CONN, HIGH);
+void flasher(int pin) {
+	if (digitalRead(pin) == 0)
+		digitalWrite(pin, HIGH);
 	else
-		digitalWrite(PIN_CONN, LOW);
+		digitalWrite(pin, LOW);
 }
 
 void notifyConn(uint8_t pin, boolean connected) {
@@ -20,13 +23,17 @@ void notifyConn(uint8_t pin, boolean connected) {
 
 boolean save_config() {
 	config_save_flag = false;
-#ifdef DEBUG
-	Serial.println("Save config");
-#endif
+#ifdef DEBUG_HELPER_2
+	Serial.println("--Save config");
+#endif //DEBUG_HELPER_2
 	StaticJsonBuffer<512> jsonBuffer;
-	Serial.println("Buffer created");
+#ifdef DEBUG_HELPER_3
+	Serial.println("--Buffer created");
+#endif // DEBUG_HELPER_3
 	JsonObject& json = jsonBuffer.createObject();
-	Serial.println("Object created");
+#ifdef DEBUG_HELPER_3
+	Serial.println("--Object created");
+#endif // DEBUG_HELPER_3
 	json["ssid"] = String(config.ssid);
 	json["pass"] = String(config.pass);
 	json["ntp"] = String(config.ntpServerName);
@@ -36,77 +43,83 @@ boolean save_config() {
 
 	File configFile = SPIFFS.open(CONFIG_FILE_NAME, "w");
 	if (!configFile) {
-		Serial.println("Failed to open config file for writing");
+#ifdef DEBUG_HELPER_1
+		Serial.println("------Failed to open config file for writing");
+#endif // DEBUG_HELPER_1
 		return false;
 	}
-#ifdef DEBUG
+#ifdef DEBUG_HELPER_2
 	String temp;
 	json.prettyPrintTo(temp);
 	Serial.println(temp);
-#endif
+#endif // DEBUG_HELPER_2
 
 	json.printTo(configFile);
 	return true;
 }
 
 boolean load_config() {
+#ifdef DEBUG_HELPER_3
+	Serial.println("Load_config start");
+#endif // DEBUG_HELPER_3
 	File configFile = SPIFFS.open(CONFIG_FILE_NAME, "r");
 	if (!configFile) {
+#ifndef DEBUG_HELPER_1
 		Serial.println("Failed to open config file");
+#endif // DEBUG_HELPER_1
 		return false;
-	}
-
+	} else 
+#ifdef DEBUG_HELPER_3
+		Serial.println("Config file open.");
+#endif // DEBUG_HELPER_3
 	size_t size = configFile.size();
 	if (size > 512) {
+#ifdef DEBUG_HELPER_1
 		Serial.println("Config file size is too large");
+#endif // DEBUG_HELPER_1
 		return false;
-	}
+	} 
 
 	// Allocate a buffer to store contents of the file.
 	std::unique_ptr<char[]> buf(new char[size]);
-	//std::
-
+	
 	// We don't use String here because ArduinoJson library requires the input
 	// buffer to be mutable. If you don't use ArduinoJson, you may as well
 	// use configFile.readString instead.
+
 	configFile.readBytes(buf.get(), size);
-#ifdef DEBUG
+#ifdef DEBUG_HELPER_2
 	Serial.print("JSON file size: "); Serial.print(size); Serial.println(" bytes");
-#endif
-
+#endif // DEBUG_HELPER_2
 	StaticJsonBuffer<512> jsonBuffer;
+	
 	JsonObject& json = jsonBuffer.parseObject(buf.get());
-
 	if (!json.success()) {
+#ifdef DEBUG_HELPER_1
 		Serial.println("Failed to parse config file");
+#endif // DEBUG_HELPER_1
 		return false;
 	}
-#ifdef DEBUG
 	String temp;
+#ifdef DEBUG_HELPER_2
 	json.prettyPrintTo(temp);
 	Serial.println(temp);
-#endif
-	//memset(ssid, 0, 28);
-	//memset(pass, 0, 50);
-	//String("Virus_Detected!!!").toCharArray(ssid, 28); // Assign WiFi SSID
-	//String("LaJunglaSigloXX1@.2").toCharArray(pass, 50); // Assign WiFi PASS
+#endif // DEBUG_HELPER_2
 
 	config.ssid = json["ssid"].asString();
-	//String(ssid_str).toCharArray(config.ssid, 28);
-
 	config.pass = json["pass"].asString();
-	//String(pass_str).toCharArray(config.pass, 28);
+
 	config.ntpServerName = json["ntp"].asString();
 	config.timeZone = json["timeZone"];
 	config.daylight = json["daylight"];
 	config.deviceName = json["deviceName"].asString();
 
-#ifdef DEBUG
+#ifdef DEBUG_HELPER_1
 	Serial.println("Data initialized.");
 	Serial.print("SSID: "); Serial.println(config.ssid);
 	Serial.print("NTP Server: "); Serial.println(config.ntpServerName);
 	//Serial.print("PASS: "); Serial.println(pass);
-#endif
+#endif // DEBUG_HELPER_1
 
 	return true;
 }
