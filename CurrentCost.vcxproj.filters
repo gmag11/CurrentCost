@@ -14,76 +14,76 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="_core">
-      <UniqueIdentifier>{b24438be-ed88-4a86-aa61-070b6adf9e6a}</UniqueIdentifier>
+      <UniqueIdentifier>{61cff287-6853-4085-95f1-1656e3410932}</UniqueIdentifier>
     </Filter>
     <Filter Include="_core\libb64">
-      <UniqueIdentifier>{51784c6b-0225-4f82-a3bc-66b36cbfb1c5}</UniqueIdentifier>
+      <UniqueIdentifier>{44225e0c-99ca-4c98-b0fc-f5c468519790}</UniqueIdentifier>
     </Filter>
     <Filter Include="_core\spiffs">
-      <UniqueIdentifier>{495dbf00-799e-4191-810f-0f00f4ec5b37}</UniqueIdentifier>
+      <UniqueIdentifier>{0900f922-cd27-460b-bb45-60fd8fd027ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries">
-      <UniqueIdentifier>{545bb5ff-6ff7-41cb-8f62-0240da0d6343}</UniqueIdentifier>
+      <UniqueIdentifier>{312ab18d-d925-4e73-9873-fd2732ec33fe}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\arduino_148026">
-      <UniqueIdentifier>{ebbe5944-3f53-486e-a94a-5e356b9ff9a1}</UniqueIdentifier>
+      <UniqueIdentifier>{1533ad92-8e22-4909-982e-79487ed07fbb}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ArduinoJson">
-      <UniqueIdentifier>{df915dcf-4135-497a-b635-d4b396970d2d}</UniqueIdentifier>
+      <UniqueIdentifier>{6818903a-33c3-48ac-95f3-ca41017bf0af}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ArduinoJson\src">
-      <UniqueIdentifier>{6608c1a9-717f-4267-8971-1b03619a6561}</UniqueIdentifier>
+      <UniqueIdentifier>{2cab7fae-efa0-4cc9-aedf-4c0c0e6a2e03}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ArduinoJson\src\Arduino">
-      <UniqueIdentifier>{0acde6c8-2eb3-4a08-a2bd-6e5b7570e057}</UniqueIdentifier>
+      <UniqueIdentifier>{738ec42f-590a-4d00-9165-805f6a753c38}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ArduinoJson\src\Internals">
-      <UniqueIdentifier>{ec2216d5-d9d4-4672-8770-80a0ee662415}</UniqueIdentifier>
+      <UniqueIdentifier>{ee613cb9-5f83-4081-8133-4e1e77438134}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\CCostLib">
-      <UniqueIdentifier>{c12ac95a-8e2e-4ac9-ab02-fe4c32fa111d}</UniqueIdentifier>
+      <UniqueIdentifier>{18218ce9-2700-456c-a26f-fc806702ac00}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\CCostLib\src">
-      <UniqueIdentifier>{1aaf85bb-6809-4352-89ec-29ba1c066b58}</UniqueIdentifier>
+      <UniqueIdentifier>{067f0f48-1ae7-4ef2-b7dd-67ec42ec9b1e}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WebServer">
-      <UniqueIdentifier>{9ffd1d61-fddc-49e6-bca8-619b2922b8f7}</UniqueIdentifier>
+      <UniqueIdentifier>{4cd96212-14ef-4629-a16e-28de174ddf58}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WebServer\src">
-      <UniqueIdentifier>{77a770fe-e84c-4c1d-9fc8-263c06192d60}</UniqueIdentifier>
+      <UniqueIdentifier>{10eb4cb9-fff4-428c-807d-81a184f984fb}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WebServer\src\detail">
-      <UniqueIdentifier>{48c202c8-419c-4271-aea5-9d65c64aaf14}</UniqueIdentifier>
+      <UniqueIdentifier>{0df61324-a2de-4d9f-8a36-d803dd99fd71}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WiFi">
-      <UniqueIdentifier>{5ee8fb0f-256a-445f-b71f-dd274dbb8486}</UniqueIdentifier>
+      <UniqueIdentifier>{4072ab02-31f8-46b7-b4a8-0f3897eda3e8}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WiFi\src">
-      <UniqueIdentifier>{e74902f3-e245-47d7-b0e4-a639d8a7f35c}</UniqueIdentifier>
+      <UniqueIdentifier>{3ed6a428-ca6f-434f-a28a-a54bceb3d93d}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WiFi\src\arch">
-      <UniqueIdentifier>{d6011ca9-6024-4e09-92f4-4312eb0c12be}</UniqueIdentifier>
+      <UniqueIdentifier>{17778b1f-4a6b-451c-aa8c-1acfde4ea3eb}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WiFi\src\include">
-      <UniqueIdentifier>{becbb00f-5c5f-4a05-92d8-ca4779e59efe}</UniqueIdentifier>
+      <UniqueIdentifier>{c49367ac-d803-4d54-9345-6609212e932c}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\ESP8266WiFi\src\lwip">
-      <UniqueIdentifier>{a4753dee-58ac-456d-a196-936fd090a559}</UniqueIdentifier>
+      <UniqueIdentifier>{7db4bb9d-56b1-40eb-a0b2-f96f337fde94}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\espsoftwareserial-master">
-      <UniqueIdentifier>{9d526b61-8a90-4175-8dca-43504c1a34cc}</UniqueIdentifier>
+      <UniqueIdentifier>{39acd2f7-5ce5-4db0-985b-c576f6187ff3}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\NTPClient">
-      <UniqueIdentifier>{2be0bb46-55a1-4af6-8221-a25bbd0c4c7c}</UniqueIdentifier>
+      <UniqueIdentifier>{9ced4634-005d-49a6-9d1c-35750662af29}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\NTPClient\src">
-      <UniqueIdentifier>{780987fe-fadd-4428-bfbe-898f4e9dcb2f}</UniqueIdentifier>
+      <UniqueIdentifier>{30f29f97-ea5b-429d-8df6-5242b71372c6}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\Ticker">
-      <UniqueIdentifier>{8ab2a05e-cf06-4f85-8f04-e98ebb4816ad}</UniqueIdentifier>
+      <UniqueIdentifier>{367e99e5-b367-4e3f-93a5-bd824c20ac5f}</UniqueIdentifier>
     </Filter>
     <Filter Include="_libraries\TimeAlarms">
-      <UniqueIdentifier>{1fdab7f9-9c45-47b8-a373-efcb168d3ead}</UniqueIdentifier>
+      <UniqueIdentifier>{120dad48-e369-45c3-a0b2-cb3357a33817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,9 +111,6 @@
     <ClInclude Include="Page_Admin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Page_NetworkConfiguration.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Page_Script.js.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\_micro-api\libraries\CCostLib\src\CCostLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page_NetworkConfiguration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\Arduino.h">
@@ -471,6 +471,9 @@
       <Filter>_core</Filter>
     </ClCompile>
     <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\base64.cpp">
+      <Filter>_core</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cbuf.cpp">
       <Filter>_core</Filter>
     </ClCompile>
     <ClCompile Include="C:\Program Files (x86)\Arduino\hardware\esp8266com\esp8266\cores\esp8266\cont_util.c">
